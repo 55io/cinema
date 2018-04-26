@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>DarkSide Cinema</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="language" content="ru">
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="js/Request.js" type="text/javascript"></script>
+    <script src="js/Report.js" type="text/javascript"></script>
+    <script src="js/adminApp.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="/main.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+<body>
+<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+        <div class="inner">
+            <h3 class="masthead-brand">Cinema</h3>
+            <nav class="nav nav-masthead justify-content-center">
+                <a class="nav-link" href="/">Buy</a>
+                <a class="nav-link active" href="#">Admin</a>
+            </nav>
+        </div>
+    </header>
+
+    <main role="main" class="inner cover">
+
+        <div class="row mb-5">
+            <div class="col-md">
+                <div class="form-group">
+                    <label for="filmName">Film name</label>
+                    <input class="form-control" id="filmName" name='name'>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-group">
+                    <label for="filmDuration">Duration</label>
+                    <input id="filmDuration" class="form-control">
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-md">
+                <div class="form-group">
+                    <a href="#" class="btn btn-lg btn-secondary btn-block" id="addFilmButton">Add film</a>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-group">
+                    <a href="#" class="btn btn-lg btn-secondary btn-block" id="generateButton">Generate Shedule</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link" data-ajax = "report" data-report="1" data-toggle="tab" href="#report1" role="tab" aria-controls="report1" aria-selected="true">Report 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-ajax = "report" data-report="2" data-toggle="tab" href="#report2" role="tab" aria-controls="report2" aria-selected="false">Report 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-ajax = "report" data-report="3" data-toggle="tab" href="#report3" role="tab" aria-controls="report3" aria-selected="false">Report 3</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-ajax = "report" data-report="4" data-toggle="tab" href="#report4" role="tab" aria-controls="report4" aria-selected="false">Report 4</a>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane" id="report1" role="tabpanel" aria-labelledby="report1-tab">
+
+            </div>
+            <div class="tab-pane" id="report2" role="tabpanel" aria-labelledby="report2-tab">
+
+            </div>
+            <div class="tab-pane" id="report3" role="tabpanel" aria-labelledby="report3-tab">
+
+            </div>
+            <div class="tab-pane" id="report4" role="tabpanel" aria-labelledby="report4-tab">
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="mastfoot mt-auto">
+        <div class="inner">
+            <p>(C)</p>
+        </div>
+    </footer>
+
+</div>
+</body>
+</body>
+</html>
