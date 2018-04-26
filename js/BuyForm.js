@@ -28,7 +28,7 @@ class BuyForm {
             buyButton.setAttribute('hidden', '');
 
         };
-        let request = new Request("formHandler.php", param);
+        let request = new Request("/ajax/formHandler.php", param);
         request.execute(onSuccess);
     }
 
@@ -53,7 +53,7 @@ class BuyForm {
             remainingTickets.value = parsed['remaining_tickets'];
             ticketPrice.innerHTML = parsed['price'];
         };
-        let request = new Request("formHandler.php", param);
+        let request = new Request("/ajax/formHandler.php", param);
         request.execute(onSuccess);
     }
 

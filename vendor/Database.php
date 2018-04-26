@@ -17,7 +17,7 @@ class Database {
 
     public function connect() {
         if(!isset(self::$connection)) {
-            $config = parse_ini_file('./config.ini');
+            $config = parse_ini_file($_SERVER['DOCUMENT_ROOT'] . '/config.ini');
             self::$connection = new mysqli($config['host'], $config['username'], $config['password'], $config['dbname']);
         }
 

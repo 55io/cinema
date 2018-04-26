@@ -8,7 +8,7 @@ class Report {
 
     generate() {
         if (this.resultTable === null) {
-            const reportUrl = './reportHandler.php';
+            const reportUrl = '/ajax/reportHandler.php';
             const onSuccess = (data) => {
                 let parsedResult = JSON.parse(data);
                 this.resultTable = Report.buildTable(parsedResult['table']);
@@ -40,7 +40,7 @@ class Report {
     static buildTableHead(colHeaders) {
         let tableHead = document.createElement('thead');
         let rowHead = document.createElement('tr');
-        for(let i = 0; i < colHeaders.length; i++ ) {
+        for (let i = 0; i < colHeaders.length; i++) {
             let colHead = document.createElement('th');
             colHead.setAttribute('scope', 'col');
             let colHeadText = document.createTextNode(Report.formatColName(colHeaders[i]));
@@ -54,15 +54,15 @@ class Report {
     static buldTableBody(tableRows) {
         let tableBody = document.createElement('tbody');
 
-        for(let i = 0; i < tableRows.length; i++ ) {
+        for (let i = 0; i < tableRows.length; i++) {
             let tableRow = document.createElement('tr');
             let row = Object.values(tableRows[i]);
-                for(let j = 0; j < row.length; j++ ) {
-                    let tableCol = document.createElement('td');
-                    let colText = document.createTextNode(row[j]);
-                    tableCol.appendChild(colText);
-                    tableRow.appendChild(tableCol);
-                }
+            for (let j = 0; j < row.length; j++) {
+                let tableCol = document.createElement('td');
+                let colText = document.createTextNode(row[j]);
+                tableCol.appendChild(colText);
+                tableRow.appendChild(tableCol);
+            }
             tableBody.appendChild(tableRow);
         }
         return tableBody;

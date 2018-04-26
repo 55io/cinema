@@ -10,14 +10,13 @@ if (isset($postParam['code'])) {
             $myDatabase = new Database();
             $myRequest = new Request($myDatabase);
             $rows = $myRequest->insert($insertFilmScript);
-            echo(json_encode($insertFilmScript));
             break;
         case 'generate':
             generateShedule();
             generateTickets();
-            echo('success');
             break;
     }
+    echo('success');
 }
 
 function generateShedule()
@@ -46,12 +45,13 @@ function generateShedule()
     $myRequest->insert($insertSeanceScript);
 }
 
-function generateTickets(){
+function generateTickets()
+{
     $myDatabase = new Database();
     $myRequest = new Request($myDatabase);
     $seances = $myRequest->select('SELECT id, max_tickets_count FROM seance;');
     $insertTicketScript = "INSERT INTO `ticket` (seance_id) VALUES ('{$seances[0]['id']}')";
-    foreach($seances as $seance) {
+    foreach ($seances as $seance) {
         $solvedTickets = rand(0, $seance['max_tickets_count']);
         for ($i = 1; $i < $solvedTickets; $i++) {
             $insertTicketScript .= ", ('{$seance['id']}')";
